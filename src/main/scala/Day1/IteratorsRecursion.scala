@@ -10,10 +10,10 @@ object IteratorsRecursion {
 
   def simpleIterator(text: String, number: Int): Unit = {
 
-    if (number == 1) {
+    if (number != 1) {
+      simpleIterator(text, number - 1)
+      println(text + number)
     }
-    else simpleIterator(text, number - 1)
-    println(text + number)
   }
 
   def rectangleIterator(text: String, number: Int): Unit = {
@@ -34,9 +34,7 @@ object IteratorsRecursion {
 
   def textColumnIterator(text: String, colNumber: Int, width: Int): Unit = {
 
-    if (colNumber == 1) {
-    }
-    else {
+    if (colNumber != 1) {
       textLineIterator(text, width)
       textColumnIterator(text, colNumber - 1, width)
     }

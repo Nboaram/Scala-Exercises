@@ -21,19 +21,15 @@ object Main {
   }
 
   def returnFunction(): String = {
-    var a = "Stringy"
-    a
+    "Stringy"
   }
 
   def parameterFunction(stringy: String, inty : Int): String = {
-     var result = stringy.takeRight(inty)
-      result
+     stringy.takeRight(inty)
   }
 
-  def replaceFunction(stringOne: String, StringTwo: String, characterOne : Char, characterTwo: Char): String = {
-    var newString = stringOne + StringTwo
-    var replacedString = newString.replace(characterOne, characterTwo)
-    replacedString
+  def replaceFunction(stringOne: String, stringTwo: String, characterOne : Char, characterTwo: Char): String = {
+    stringOne.concat(stringTwo).replace(characterOne,characterTwo)
   }
 
   def numbersFunction(num1: Int, num2: Int, cond : Boolean): Int = {
@@ -43,11 +39,11 @@ object Main {
       result = num2
       nonZero = false
     }
-    if (num2 == 0) {
+    else if (num2 == 0) {
       result = num1
       nonZero = false
     }
-    if (nonZero == true) {
+    else if (nonZero == true) {
       if (cond == true) {
         result = num1 + num2
       }

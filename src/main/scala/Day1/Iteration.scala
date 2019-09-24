@@ -20,7 +20,7 @@ object Iteration {
     for (i <- 1 to number) {
       var printedLine = ""
       for (i <- 1 to number) {
-       printedLine = printedLine + text;
+       printedLine += text
       }
       println(printedLine)
     }
@@ -28,13 +28,16 @@ object Iteration {
 
   def fizzBuzz(fizz: String, buzz: String, number: Int): Unit = {
     for (i <- 1 to number) {
-      if(i%3== 0 && i%5 == 0) {
+      val fizzTrue = i % 3 == 0
+      val buzzTrue = i % 3 == 0
+
+      if(fizzTrue && buzzTrue) {
         println(fizz + buzz)
       }
-      else if(i%3 == 0) {
+      else if(fizzTrue) {
         println(fizz)
       }
-      else if (i%5 == 0) {
+      else if (buzzTrue) {
         println(buzz)
       }
       else {
