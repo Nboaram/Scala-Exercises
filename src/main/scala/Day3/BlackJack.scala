@@ -15,13 +15,13 @@ object BlackJack {
     blackJack(new Scores(21,22))
     blackJack(new Scores(20,20))
 
+
   }
 
   def blackJack(scores: Scores): Unit = {
-    scores match {
-      case Scores(a,b) => println( "Winner: " + calculateWinner(a,b))
-      case _ => println("Those aren't scores!")
-    }
+
+    println( "Winner: " + calculateWinner(scores.num1,scores.num2))
+
   }
 
   def calculateWinner(firstScore: Int, secondScore: Int): String = {
