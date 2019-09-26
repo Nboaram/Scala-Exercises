@@ -1,17 +1,19 @@
 package Garage
 
-import java.util.Calendar
+import scala.collection.mutable.ListBuffer
 
+class Garage {
 
-object Garage {
-
-
-  def main(args: Array[String]): Unit = {
-
-   var bikey = new Bike("Yamaha", 2, "Green", 180, Calendar.getInstance().getTime)
-    println(bikey.toString)
-    println(new Customer("Jeremy", 0).toString)
-    println(new Customer("Richard", 1).toString)
+  var vehicles = new ListBuffer[Vehicle]
+  //Create Vehicle
+  def createVehicle(newVehicle: Vehicle): Unit ={
+    vehicles += newVehicle
   }
-
+  //Remove Vehicle
+  //Add Employee(Register)
+  //Fix Vehicle
+  //Calculate Bills
+  //Output the contents of the Garage
+  //Open Garage
+  //Close Garage
 }
