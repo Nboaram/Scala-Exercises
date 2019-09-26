@@ -4,14 +4,10 @@ object PatternMatchingConditionals {
 
   def main(args: Array[String]): Unit = {
 
-    val input = new NumberIntake(3,5,true)
-    val input2 = new NumberIntake(3,5,false)
-    val input3 = new NumberIntake(0,5,true)
-    val input4 = new NumberIntake(3,0,true)
-    conditionalNumbers(input)
-    conditionalNumbers(input2)
-    conditionalNumbers(input3)
-    conditionalNumbers(input4)
+    conditionalNumbers(new NumberIntake(3,5,true))
+    conditionalNumbers(new NumberIntake(3,5,false))
+    conditionalNumbers(new NumberIntake(0,5,true))
+    conditionalNumbers(new NumberIntake(3,0,true))
   }
 
   def conditionalNumbers(numberIntake: NumberIntake): Unit = numberIntake match {
