@@ -9,11 +9,10 @@ object Lumberjacks {
   }
 
   def distributeLogs(sizeofGrid: Int, logs : Int, logPiles : Array[Int]): Unit = {
-    var lowestLogPile = 1000000
+    var lowestLogPile = determineLowestLogPile(logPiles)
     var logCount = logs
-    while (logCount > 0) {
-      lowestLogPile = determineLowestLogPile(logPiles)
 
+    while (logCount > 0) {
       for (logPile <- 0 until logPiles.length) {
         if (logCount > 0) {
           if (logPiles(logPile) == lowestLogPile) {
@@ -23,6 +22,7 @@ object Lumberjacks {
           }
         }
       }
+      lowestLogPile += 1
     }
     printLogPiles(logPiles, sizeofGrid)
   }
