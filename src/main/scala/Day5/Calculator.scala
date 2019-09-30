@@ -24,13 +24,13 @@ object Calculator {
     }
   }
 
-  def power(num1: Double, num2: Int): Double = {
+  def power(num1: Double, power: Int): Double = {
     var result = num1
     var count = 1
-    if (num2 == 0) {
+    if (power == 0) {
       result = 1
     }
-    else while (count != num2) {
+    else while (count != power) {
       result = result * num1
       count += 1
     }

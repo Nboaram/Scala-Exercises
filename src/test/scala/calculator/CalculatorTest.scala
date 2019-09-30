@@ -21,6 +21,10 @@ class CalculatorTest extends BaseTestingClass{
     assert(subtract(2, 3) == -1)
   }
 
+  "Calculator Subtract when fed -12 and 3" should "return -9" in {
+    assert(subtract(-12, 3) == -15)
+  }
+
   "Calculator multiply when fed 2 and 3" should "return 6" in {
     assert(multiply(2, 3) == 6)
   }

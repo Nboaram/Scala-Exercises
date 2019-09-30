@@ -21,10 +21,17 @@ class GarageOperations {
     people += newEmployee
   }
 
-  def fixVehicle(vehicle: Vehicle, employee: Employee): Unit = {
-    while (vehicle.damage > 0) {
+  def fixVehicle(vehicle: Vehicle, employee: Employee): Int = {
+   if (vehicle.damage < 0) {
+    0
+   } else {
+     vehicle.damage / employee.workRate
+   }
+  }
 
-    }
+  def calculateBills(workHours: Int): Int = {
+
+   workHours * 50
   }
 
 

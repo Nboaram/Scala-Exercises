@@ -11,4 +11,5 @@ object Main {
   val garage = new GarageOperations
     garage.createVehicle(new Bike("Suzuki", 2, "red", 123, Calendar.getInstance().getTime, 20))
   }
+
 }
