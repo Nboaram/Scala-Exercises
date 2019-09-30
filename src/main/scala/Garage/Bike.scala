@@ -3,7 +3,7 @@ package Garage
 import java.util.Date
 
 class Bike(val name: String, val wheels: Int, var colour: String,
-           cc: Int, val lastMOT: Date) extends Vehicle {
+           cc: Int, val lastMOT: Date, var damage : Int) extends Vehicle {
 
   val id : Int = Vehicle.getId
 

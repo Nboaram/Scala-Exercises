@@ -8,7 +8,7 @@ object Main {
 
   def main(args: Array[String]): Unit = {
 
-  val garage = new Garage
-    garage.createVehicle(new Bike("Suzuki", 2, "red", 123, Calendar.getInstance().getTime))
+  val garage = new GarageOperations
+    garage.createVehicle(new Bike("Suzuki", 2, "red", 123, Calendar.getInstance().getTime, 20))
   }
 }
