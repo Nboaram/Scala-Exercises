@@ -18,20 +18,32 @@ object MorseCode {
 
   def main(args: Array[String]): Unit = {
     translateMorseToString("... --- ... / .- -.. .-. .. .- -.")
+    translateStringToMorse("Hello World 29")
   }
 
   def translateMorseToString(morseString: String): Unit = {
     val letters: Array[String] = morseString.split(" ")
     for (letter <- 0 to letters.length - 1) {
       for ((key, value) <- morseMap) {
-        println(s"Key: $key, Value: $value")
         if (letters(letter) equals value) {
-          println("Key:" + key)
           letters(letter) = key
         }
       }
     }
     val englishString = letters.mkString
     println(englishString)
+  }
+
+  def translateStringToMorse(englishString: String): Unit = {
+    val letters = englishString.toLowerCase.split("")
+    for (letter <- 0 to letters.length - 1) {
+      for ((key, value) <- morseMap) {
+        if(letters(letter) == key) {
+          letters(letter) = value
+        }
+      }
+    }
+    val morseString = letters.mkString
+    println(morseString)
   }
 }
