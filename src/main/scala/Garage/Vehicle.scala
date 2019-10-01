@@ -10,6 +10,7 @@ abstract class Vehicle {
   val lastMOT: Date
   def beepHorn() : Unit = { println("Beep")}
   var damage: Int
+  var parts : Array[Part]
 }
 
 object Vehicle {

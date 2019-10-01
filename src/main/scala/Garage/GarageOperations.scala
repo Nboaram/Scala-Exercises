@@ -50,9 +50,11 @@ class GarageOperations {
     })
   }
 
-  //Fix Vehicle
-  //Calculate Bills
-  //Output the contents of the Garage
-  //Open Garage
-  //Close Garage
+  def isOpen(hourOfDay: Int): Boolean = {
+    if (hourOfDay < 9 || hourOfDay > 17) {
+      false
+    } else {
+      true
+    }
+  }
 }
