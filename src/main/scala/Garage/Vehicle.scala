@@ -9,6 +9,7 @@ abstract class Vehicle {
   var colour: String
   val lastMOT: Date
   def beepHorn() : Unit = { println("Beep")}
+  var damage: Int
 }
 
 object Vehicle {
