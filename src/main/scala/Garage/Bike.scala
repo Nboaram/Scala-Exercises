@@ -8,7 +8,7 @@ class Bike(val name: String, val wheels: Int, var colour: String,
   val id : Int = Vehicle.getId
 
   override def toString: String = {
-  s"ID: $id Name: $name, Number of Wheels: $wheels, Colour: $colour, CC: $cc, Date of Last MOT: $lastMOT"
+  s"Id: $id Name: $name, Number of Wheels: $wheels, Colour: $colour, CC: $cc, Date of Last MOT: $lastMOT"
   }
 
 

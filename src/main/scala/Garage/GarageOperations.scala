@@ -30,10 +30,25 @@ class GarageOperations {
   }
 
   def calculateBills(workHours: Int): Int = {
-
    workHours * 50
   }
 
+  def outputContentsOfGarage(): Unit = {
+    printAllVehicles()
+    printAllPeople()
+  }
+
+  def printAllVehicles(): Unit ={
+    vehicles foreach(vehicle => {
+      println(vehicle.toString)
+    })
+  }
+
+  def printAllPeople(): Unit ={
+    people foreach(person => {
+      println(person.toString)
+    })
+  }
 
   //Fix Vehicle
   //Calculate Bills

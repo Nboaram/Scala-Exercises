@@ -24,6 +24,30 @@ object Calculator {
     }
   }
 
+  def powerRecursion(num1: Double, power: Int): Double = {
+   var result = num1
+    if (power == 0) {
+       result = 1
+      result
+    }
+    else {
+      println(s" Power: $power")
+      result = powerMultiplication(num1,num1,power)
+      result
+    }
+  }
+
+  def powerMultiplication (number: Double, initialNumber: Double, iterations: Int): Double = {
+    println(iterations)
+    if (iterations > 1) {
+      println(number * initialNumber)
+      powerMultiplication(number * initialNumber, initialNumber, iterations - 1)
+     }
+    else
+      number
+  }
+
+
   def power(num1: Double, power: Int): Double = {
     var result = num1
     var count = 1

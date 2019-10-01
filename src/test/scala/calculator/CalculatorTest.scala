@@ -50,15 +50,19 @@ class CalculatorTest extends BaseTestingClass{
   }
 
   "Calculator power when fed 2 and 3" should "should return 8" in {
-    assert(power(2, 3) == 8)
+    assert(powerRecursion(2, 3) == 8)
+  }
+
+  "Calculator power when fed 2 and 8" should "should return 8" in {
+    assert(powerRecursion(2, 8) == 256)
   }
 
   "Calculator power when fed 5 and 1" should "should return 5" in {
-    assert(power(5, 1) == 5)
+    assert(powerRecursion(5, 1) == 5)
   }
 
   "Calculator power when fed 7 and 0" should "should return 1" in {
-    assert(power(5, 0) == 1)
+    assert(powerRecursion(5, 0) == 1)
   }
 
   "Calculator modulus when fed 13 and 10" should "should return 3" in {
