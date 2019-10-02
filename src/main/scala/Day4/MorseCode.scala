@@ -30,20 +30,17 @@ object MorseCode {
         }
       }
     }
-    val englishString = letters.mkString
-    println(englishString)
+    println(letters.mkString)
   }
 
   def translateStringToMorse(englishString: String): Unit = {
     val letters = englishString.toLowerCase.split("")
     for (letter <- 0 to letters.length - 1) {
-      for ((key, value) <- morseMap) {
-        if(letters(letter) == key) {
-          letters(letter) = value
-        }
+      for ((key, value) <- morseMap) {     if(letters(letter) == key) {
+        letters(letter) = value
+      }
       }
     }
-    val morseString = letters.mkString
-    println(morseString)
+    println(letters.mkString)
   }
 }

@@ -30,14 +30,31 @@ class GarageOperations {
   }
 
   def calculateBills(workHours: Int): Int = {
-
    workHours * 50
   }
 
+  def outputContentsOfGarage(): Unit = {
+    printAllVehicles()
+    printAllPeople()
+  }
 
-  //Fix Vehicle
-  //Calculate Bills
-  //Output the contents of the Garage
-  //Open Garage
-  //Close Garage
+  def printAllVehicles(): Unit ={
+    vehicles foreach(vehicle => {
+      println(vehicle.toString)
+    })
+  }
+
+  def printAllPeople(): Unit ={
+    people foreach(person => {
+      println(person.toString)
+    })
+  }
+
+  def isOpen(hourOfDay: Int): Boolean = {
+    if (hourOfDay < 9 || hourOfDay > 17) {
+      false
+    } else {
+      true
+    }
+  }
 }

@@ -24,17 +24,24 @@ object Calculator {
     }
   }
 
-  def power(num1: Double, power: Int): Double = {
-    var result = num1
-    var count = 1
+  def powerRecursion(num1: Double, power: Int): Double = {
     if (power == 0) {
-      result = 1
+      1
     }
-    else while (count != power) {
-      result = result * num1
-      count += 1
+    else {
+      println(s" Power: $power")
+      powerMultiplication(num1,num1,power)
     }
-    result
+  }
+
+  def powerMultiplication (number: Double, initialNumber: Double, iterations: Int): Double = {
+    println(iterations)
+    if (iterations > 1) {
+      println(number * initialNumber)
+      powerMultiplication(number * initialNumber, initialNumber, iterations - 1)
+     }
+    else
+      number
   }
 
   def modulus(num1: Int, num2: Int): Int = {
