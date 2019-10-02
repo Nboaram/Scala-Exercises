@@ -25,15 +25,12 @@ object Calculator {
   }
 
   def powerRecursion(num1: Double, power: Int): Double = {
-   var result = num1
     if (power == 0) {
-       result = 1
-      result
+      1
     }
     else {
       println(s" Power: $power")
-      result = powerMultiplication(num1,num1,power)
-      result
+      powerMultiplication(num1,num1,power)
     }
   }
 
@@ -45,20 +42,6 @@ object Calculator {
      }
     else
       number
-  }
-
-
-  def power(num1: Double, power: Int): Double = {
-    var result = num1
-    var count = 1
-    if (power == 0) {
-      result = 1
-    }
-    else while (count != power) {
-      result = result * num1
-      count += 1
-    }
-    result
   }
 
   def modulus(num1: Int, num2: Int): Int = {

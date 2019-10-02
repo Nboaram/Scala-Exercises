@@ -1,4 +1,4 @@
-package Day6
+package Ants
 
 class Location( val continent : String){
 
