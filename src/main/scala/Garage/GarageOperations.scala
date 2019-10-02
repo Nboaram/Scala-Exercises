@@ -6,31 +6,40 @@ class GarageOperations {
 
   var vehicles = new ListBuffer[Vehicle]
   var people = new ListBuffer[Person]
+  var availableEmployees = new ListBuffer[Employee]
+  var busyEmployees = new ListBuffer[Employee]
+  var currentVehicleBill = 0
 
   def createVehicle(newVehicle: Vehicle): Unit ={
     vehicles += newVehicle
   }
-  def removeVehicle(vehicleId: Vehicle): Unit ={
+
+  def removeVehicle(vehicleId: Int): Unit ={
     vehicles foreach(vehicle => {
       if (vehicle.id == vehicleId) {
         vehicles -= vehicle
       }
     })
   }
+
   def registerEmployee(newEmployee: Employee): Unit = {
     people += newEmployee
+    availableEmployees += newEmployee
   }
 
-  def fixVehicle(vehicle: Vehicle, employee: Employee): Int = {
-   if (vehicle.damage < 0) {
-    0
-   } else {
-     vehicle.damage / employee.workRate
-   }
+  def fixPart(part: Part, employee: Employee): Int = {
+    part.repairProgress = part.repairProgress - employee.workRate
+    calculateBills(part, employee)
+    part.repairProgress
   }
 
-  def calculateBills(workHours: Int): Int = {
-   workHours * 50
+  def calculateBills(part : Part, employee: Employee): Unit = {
+    if (part.repairProgress < 0) {
+      part.broken = false
+      currentVehicleBill = currentVehicleBill + (employee.workRate * 20 ) + part.costOfPart
+    } else {
+      currentVehicleBill = currentVehicleBill + (employee.workRate * 20 )
+    }
   }
 
   def outputContentsOfGarage(): Unit = {
